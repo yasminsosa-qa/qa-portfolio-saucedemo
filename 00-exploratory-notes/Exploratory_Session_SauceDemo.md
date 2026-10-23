@@ -1,7 +1,9 @@
 # Exploratory Session — SauceDemo
-**Tester:** Yasmin Sosa · **Date:** 2026-10-23
-**Browsers:** Chrome 156.0.8078.48, Safari 27.0 · **OS:** macOS 27.0.1 (26A434)
-**Goal:** Learn the application's main features before writing the test plan.
+- **Tester:** Yasmin Sosa
+- **Date:** 2026-10-23
+- **Browsers:** Chrome 156.0.8078.48, Safari 27.0
+- **OS:** macOS 27.0.1 (26A434)
+- **Goal:** Learn the application's main features before writing the test plan.
 
 ## 1. Login
 - Fields: Username, Password, and a Login button. The page lists 6 accepted users and one shared password.
