@@ -15,7 +15,9 @@
 ## 2. Product catalog
 - The Products page shows 6 products: Sauce Labs Backpack ($29.99), Sauce Labs Bike Light ($9.99), Sauce Labs Bolt T-Shirt ($15.99), Sauce Labs Fleece Jacket ($49.99), Sauce Labs Onesie ($7.99), and Test.allTheThings() T-Shirt (Red) ($15.99).
 - Each product shows an image, name, description, price, and an "Add to cart" button.
-- Sort options: (to be completed)
+- Sort options: "Name (A to Z)" (default), "Name (Z to A)", "Price (low to high)", "Price (high to low)".
+- All 4 sort options order the products correctly.
+- Edge case checked: two products share the same price ($15.99); price sorting still places them correctly between $9.99 and $29.99.
 
 ## 3. Product details
 - Content observation: some product text uses code-style wording ("carry.allTheThings()" on the Backpack and the product name "Test.allTheThings() T-Shirt (Red)"). Likely intentional brand voice, not a defect. Question for Product: could this confuse non-technical customers?
@@ -25,10 +27,27 @@
 - Removing a product updates the badge correctly.
 
 ## 5. Checkout
-(to be completed)
+- Step 1 (Your Information) asks for First Name, Last Name, and Zip/Postal Code.
+- Validation messages (fields are checked in order, one error at a time):
+  - All fields empty → "Error: First Name is required"
+  - Missing Last Name → "Error: Last Name is required"
+  - Missing Postal Code → "Error: Postal Code is required"
+- Step 2 (Overview) with Sauce Labs Backpack ($29.99) and Sauce Labs Fleece Jacket ($49.99):
+  - Payment: SauceCard #31337 · Shipping: Free Pony Express Delivery!
+  - Item total: $79.98 · Tax: $6.40 · Total: $86.38
+  - Verified manually: tax = 8% of item total ($79.98 × 0.08 = $6.398 → $6.40), and the total is correct.
+- Cancel on the Overview step returns to the Products page and keeps the items in the cart (badge still shows 2). Expected: canceling checkout should not empty the cart.
+- Finish → confirmation page: "Thank you for your order!" / "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+- "Back Home" returns to the Products page.
+- "Generate PDF order" downloads a PDF with the order details.
+- After Finish, the cart badge is cleared.
 
 ## 6. Menu (☰)
 - Options: All Items, Dynamic Catalog, About, Logout, Reset App State.
 - Reset App State → empties the cart and removes the badge, but product buttons keep showing "Remove" → [BUG-002](../03-bug-reports/BUG-002.md)
 - Dynamic Catalog → Lazy Load repeats the same products in the same order → [BUG-003](../03-bug-reports/BUG-003.md)
   - Lazy Load cards are not clickable and have no "Add to cart" button (question for Product, see BUG-003).
+
+## Summary
+- 3 defects logged: BUG-001 (login error text cut off), BUG-002 (stale "Remove" buttons after Reset App State), BUG-003 (duplicate products in Lazy Load, pending Product confirmation).
+- Areas to cover in the test plan: login, catalog and sorting, cart, checkout (validation, totals, cancel, confirmation), menu actions.
