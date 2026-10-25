@@ -74,7 +74,7 @@ This test plan defines how the core shopping flow of SauceDemo will be validated
 - **P2 (High):** important function or validation; a workaround may exist.
 - **P3 (Medium):** secondary function or cosmetic issue.
 
-**Smoke suite (P1):** TC-01, TC-05, TC-11, TC-15, TC-17, TC-19
+**Smoke suite (P1):** TC-01, TC-05, TC-11, TC-14, TC-15, TC-17, TC-19
 
 ### Test cases planned
 | ID | Title | Priority | Type | Req |
