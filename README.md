@@ -33,9 +33,7 @@ End-to-end QA project by **Yasmin Sosa**, from exploratory testing to a document
 | [BUG-003](./03-bug-reports/BUG-003.md) | Lazy Load catalog shows the same products more than once | Medium |
 | [BUG-004](./03-bug-reports/BUG-004.md) | Sort dropdown arrow does not open the menu, although the cursor shows it as clickable | Low |
 
-## Skills
-Organized around what current QA job postings ask for most: requirements and test design, regression, defect reporting, API testing, Agile, and AI quality.
-
+## Skills 
 **Shown in this portfolio**
 - **Requirements analysis and traceability:** requirements → test cases → results → bugs
 - **Test planning:** scope, risk-based priority (P1/P2/P3), smoke suite, entry, suspension, and exit criteria, and metrics
